@@ -13,6 +13,8 @@ describe "Static pages" do
     it { should_not have_selector 'h2', text: 'sample app' }
     it { should have_selector 'h2', text: 'starter app' }
     it { should have_selector 'h2', text: 'extending' }
+    it { should have_selector 'footer', text: 'Extending' }
+    it { should_not have_selector 'footer', text: 'News' }
 
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }

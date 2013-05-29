@@ -1,0 +1,10 @@
+C:/RailsInstaller/Ruby1.9.3/bin/ruby.exe -S rspec ./spec/controllers/relationships_controller_spec.rb ./spec/helpers/app
+lication_helper_spec.rb ./spec/models/micropost_spec.rb ./spec/models/relationship_spec.rb ./spec/models/user_spec.rb ./
+spec/requests/authentication_pages_spec.rb ./spec/requests/micropost_pages_spec.rb ./spec/requests/static_pages_spec.rb
+./spec/requests/user_pages_spec.rb
+
+C:/RailsInstaller/Ruby1.9.3/bin/ruby.exe -S rspec ./spec/requests/static_pages_spec.rb
+
+original news link:
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+
