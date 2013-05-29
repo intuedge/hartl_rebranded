@@ -1,15 +1,10 @@
-# Ruby on Rails Tutorial: sample application
+# Ruby on Rails Starter Application
 
-This is the sample application for
-[*Ruby on Rails Tutorial: Learn Web Development with Rails*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/). You can use this reference implementation to help track down errors if you end up having trouble with code in the tutorial. In particular, as a first debugging check I suggest getting the test suite to pass on your local machine:
+This application began life as the [sample application](http://github.com/railstutorial/sample_app_2nd_ed) for the 
+[*Ruby on Rails Tutorial: Learn Web Development with Rails (2nd Ed.)*](http://railstutorial.org/)
+by [Michael Hartl](http://michaelhartl.com/). In order to assess my understanding of the tutorial, and reuse the context and momentum established by following it, I determined that I would take Michael up on his generous provision of the sample code for reuse, as the basis for my first Ruby on Rails app.  As the first step in the process, I am starting from the end of the tutorial, and removing the overt branding as his sample app, as an exercise in test-first development a la Hartl.  Note that the original repo, and all of its commits, remain the root of this endeavor, and the initial rebranded version will be reusable on essentially the same basis as the original.
 
-    $ cd /tmp
-    $ git clone git@github.com:railstutorial/sample_app_2nd_ed.git
-    $ cd sample_app_2nd_ed
-    $ bundle install
-    $ bundle exec rake db:migrate
-    $ bundle exec rake db:test:prepare
-    $ bundle exec rspec spec/
-
-If the tests don't pass, it means there may be something wrong with your system. If they do pass, then you can debug your code by comparing it with the reference implementation.
+2013-05-28
+San Francisco Bay Area, CA, USA
+Doug May
+[The Intuitive Edge](http://intuedge.net)
