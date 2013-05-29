@@ -10,6 +10,9 @@ describe "Static pages" do
     it { should have_selector('h1',    text: 'Starter App') }
     it { should have_selector('title', text: full_title('')) }
     it { should_not have_selector 'title', text: '| Home' }
+    it { should_not have_selector 'h2', text: 'sample app' }
+    it { should have_selector 'h2', text: 'starter app' }
+    it { should have_selector 'h2', text: 'extending' }
 
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
@@ -44,13 +47,19 @@ describe "Static pages" do
 
     it { should have_selector('h1',    text: 'Help') }
     it { should have_selector('title', text: full_title('Help')) }
-  end
+    it { should have_selector('p',     text: 'starter') }
+    it { should have_selector('p',     text: 'original sample') }
+    it { should have_selector('p',     text: 'no specific help yet') }
+end
 
   describe "About page" do
     before { visit about_path }
 
     it { should have_selector('h1',    text: 'About') }
     it { should have_selector('title', text: full_title('About Us')) }
+    it { should have_selector('p',     text: 'starter') }
+    it { should have_selector('p',     text: 'original sample') }
+	it { should have_selector('p',     text: 'railsbridge.org') }
   end
 
   describe "Contact page" do
@@ -58,7 +67,11 @@ describe "Static pages" do
 
     it { should have_selector('h1',    text: 'Contact') }
     it { should have_selector('title', text: full_title('Contact')) }
-  end
+    it { should have_selector('p',     text: 'starter') }
+    it { should have_selector('p',     text: 'original sample') }
+	it { should have_selector('p',     text: 'starter.app [at] intuedge.net') }
+    it { should have_selector('p',     text: 'no formal contact yet') }
+	end
 
   it "should have the right links on the layout" do
     visit root_path
