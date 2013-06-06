@@ -52,7 +52,7 @@ describe "Static pages" do
     it { should have_selector('p',     text: 'starter') }
     it { should have_selector('p',     text: 'original sample') }
     it { should have_selector('p',     text: 'no specific help yet') }
-end
+  end
 
   describe "About page" do
     before { visit about_path }
@@ -61,7 +61,8 @@ end
     it { should have_selector('title', text: full_title('About Us')) }
     it { should have_selector('p',     text: 'starter') }
     it { should have_selector('p',     text: 'original sample') }
-	it { should have_selector('p',     text: 'railsbridge.org') }
+    it { should have_selector('a',     text: 'RailsBridge.org') }
+    it { should have_selector('a',     text: 'license information') }
   end
 
   describe "Contact page" do
@@ -71,14 +72,27 @@ end
     it { should have_selector('title', text: full_title('Contact')) }
     it { should have_selector('p',     text: 'starter') }
     it { should have_selector('p',     text: 'original sample') }
-	it { should have_selector('p',     text: 'starter.app [at] intuedge.net') }
+    it { should have_selector('p',     text: 'starter.app [at] intuedge.net') }
     it { should have_selector('p',     text: 'no formal contact yet') }
 	end
+
+  describe "License page" do
+    before { visit license_path }
+
+    it { should have_selector('h1',    text: 'License Information') }
+    it { should have_selector('title', text: full_title('Licensing')) }
+    it { should have_selector('p',     text: 'starter') }
+    it { should have_selector('p',     text: 'original sample') }
+    it { should have_selector('p',     text: 'MIT License') }
+    it { should have_selector('p',     text: 'Beerware License') }
+  end
 
   it "should have the right links on the layout" do
     visit root_path
     click_link "About"
     page.should have_selector 'title', text: full_title('About Us')
+    click_link "license information"
+    page.should have_selector 'title', text: full_title('Licensing')
     click_link "Help"
     page.should have_selector 'title', text: full_title('Help')
     click_link "Contact"
