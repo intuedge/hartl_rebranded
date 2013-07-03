@@ -72,7 +72,8 @@ describe "Static pages" do
     it { should have_selector('title', text: full_title('Contact')) }
     it { should have_selector('p',     text: 'starter') }
     it { should have_selector('p',     text: 'original sample') }
-    it { should have_selector('p',     text: 'starter.app [at] intuedge.net') }
+    it { should_not have_selector('p', text: 'starter.app [at] intuedge.net') }
+    it { should have_selector('p',     text: 'intuedge.starter.app [at] gmail.com') }
     it { should have_selector('p',     text: 'no formal contact yet') }
 	end
 
